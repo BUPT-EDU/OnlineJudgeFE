@@ -31,9 +31,18 @@
               </el-date-picker>
             </el-form-item>
           </el-col>
-          <el-col :span="8">
+          <!-- <el-col :span="8">
             <el-form-item :label="$t('m.Contest_Password')">
               <el-input v-model="contest.password" :placeholder="$t('m.Contest_Password')"></el-input>
+            </el-form-item>
+          </el-col> -->
+          <el-col :span="8">
+            <el-form-item :label="$t('m.Contest_Status')">
+              <el-switch
+                v-model="contest.visible"
+                active-text=""
+                inactive-text="">
+              </el-switch>
             </el-form-item>
           </el-col>
           <el-col :span="8">
@@ -48,15 +57,6 @@
                 v-model="contest.real_time_rank"
                 active-color="#13ce66"
                 inactive-color="#ff4949">
-              </el-switch>
-            </el-form-item>
-          </el-col>
-          <el-col :span="8">
-            <el-form-item :label="$t('m.Contest_Status')">
-              <el-switch
-                v-model="contest.visible"
-                active-text=""
-                inactive-text="">
               </el-switch>
             </el-form-item>
           </el-col>

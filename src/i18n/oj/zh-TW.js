@@ -35,6 +35,7 @@ export const m = {
   Rankings: '排名',
   Overview: '概要',
   Admin_Helper: '管理員助手',
+  Permission_Denied: '妳沒有該考試的權限，請聯系管理員。',
   // ContestProblemList.vue
   Problems_List: '試題列表',
 

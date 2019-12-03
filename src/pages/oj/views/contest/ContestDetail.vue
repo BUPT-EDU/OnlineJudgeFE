@@ -19,12 +19,15 @@
                 </Tag>
               </div>
               <div v-html="contest.description" class="markdown-body"></div>
-              <div v-if="passwordFormVisible" class="contest-password">
+              <div v-if="permissionDenied" class="permission denied" style="color:red;font-size:20px;font-weight:bold;">
+                {{$t('m.Permission_Denied')}}
+              </div>
+              <!-- <div v-if="permissionDenied" class="contest-password">
                 <Input v-model="contestPassword" type="password"
                        placeholder="contest password" class="contest-password-input"
                        @on-enter="checkPassword"/>
                 <Button type="info" @click="checkPassword">Enter</Button>
-              </div>
+              </div> -->
             </Panel>
             <Table :columns="columns" :data="contest_table" disabled-hover style="margin-bottom: 40px;"></Table>
           </div>
@@ -106,10 +109,10 @@
               return h('span', time.utcToLocal(params.row.end_time))
             }
           },
-          {
-            title: 'ContestType',
-            key: 'contest_type'
-          },
+          // {
+          //   title: 'ContestType',
+          //   key: 'contest_type'
+          // },
           {
             title: 'Rule',
             key: 'rule_type'
@@ -166,7 +169,7 @@
       }),
       ...mapGetters(
         ['contestMenuDisabled', 'contestRuleType', 'contestStatus', 'countdown', 'isContestAdmin',
-          'OIContestRealTimePermission', 'passwordFormVisible']
+          'OIContestRealTimePermission', 'permissionDenied']
       ),
       countdownColor () {
         if (this.contestStatus) {

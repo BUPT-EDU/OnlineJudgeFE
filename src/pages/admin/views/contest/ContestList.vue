@@ -24,7 +24,6 @@
         </el-table-column>
         <el-table-column
           prop="id"
-          width="80"
           label="ID">
         </el-table-column>
         <el-table-column
@@ -32,13 +31,12 @@
           label="Title">
         </el-table-column>
         <el-table-column
-          label="Rule Type"
-          width="130">
+          label="Rule Type">
           <template slot-scope="scope">
             <el-tag type="gray">{{scope.row.rule_type}}</el-tag>
           </template>
         </el-table-column>
-        <el-table-column
+        <!-- <el-table-column
           label="Contest Type"
           width="180">
           <template slot-scope="scope">
@@ -46,10 +44,9 @@
               {{ scope.row.contest_type}}
             </el-tag>
           </template>
-        </el-table-column>
+        </el-table-column> -->
         <el-table-column
-          label="Status"
-          width="130">
+          label="Status">
           <template slot-scope="scope">
             <el-tag
               :type="scope.row.status === '-1' ? 'danger' : scope.row.status === '0' ? 'success' : 'primary'">
@@ -58,7 +55,6 @@
           </template>
         </el-table-column>
         <el-table-column
-          width="100"
           label="Visible">
           <template slot-scope="scope">
             <el-switch v-model="scope.row.visible"
@@ -70,10 +66,11 @@
         </el-table-column>
         <el-table-column
           fixed="right"
-          width="250"
+          width="300"
           label="Operation">
           <div slot-scope="scope">
             <icon-btn name="Edit" icon="edit" @click.native="goEdit(scope.row.id)"></icon-btn>
+            <icon-btn name="Group" icon="group"  @click.native="goContestGroupList(scope.row.id)"></icon-btn>
             <icon-btn name="Problem" icon="list-ol" @click.native="goContestProblemList(scope.row.id)"></icon-btn>
             <icon-btn name="Announcement" icon="info-circle"
                       @click.native="goContestAnnouncement(scope.row.id)"></icon-btn>
@@ -164,6 +161,9 @@
       },
       goContestProblemList (contestId) {
         this.$router.push({name: 'contest-problem-list', params: {contestId}})
+      },
+      goContestGroupList (contestId) {
+        this.$router.push({name: 'contest-group-list', params: {contestId}})
       },
       handleVisibleSwitch (row) {
         api.editContest(row)

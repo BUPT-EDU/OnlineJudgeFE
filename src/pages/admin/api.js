@@ -97,6 +97,65 @@ export default {
       data
     })
   },
+  getGroupList (offset, limit, keyword) {
+    let params = {paging: true, offset, limit}
+    if (keyword) {
+      params.keyword = keyword
+    }
+    return ajax('admin/group', 'get', {
+      params: params
+    })
+  },
+  getGroup (id) {
+    return ajax('admin/group', 'get', {
+      params: {
+        id
+      }
+    })
+  },
+  editGroup (data) {
+    return ajax('admin/group', 'put', {
+      data
+    })
+  },
+  deleteGroups (id) {
+    return ajax('admin/group', 'delete', {
+      params: {
+        id
+      }
+    })
+  },
+  createGroup (data) {
+    return ajax('admin/group', 'post', {
+      data
+    })
+  },
+  getGroupUserList (groupId, offset, limit, keyword) {
+    let params = {id: groupId, paging: true, offset, limit}
+    if (keyword) {
+      params.keyword = keyword
+    }
+    return ajax('admin/group_user', 'get', {
+      params: params
+    })
+  },
+  updateGroupUser (data) {
+    return ajax('admin/group_user', 'put', {
+      data
+    })
+  },
+  deleteGroupUsers (groupId, userIds) {
+    let params = {group_id: groupId, user_ids: userIds.join(',')}
+    return ajax('admin/group_user', 'delete', {
+      params: params
+    })
+  },
+  addGroupUsers (groupId, userIds) {
+    let data = {group_id: groupId, user_ids: userIds}
+    return ajax('admin/group_user', 'post', {
+      data
+    })
+  },
   getLanguages () {
     return ajax('languages', 'get')
   },
@@ -200,6 +259,27 @@ export default {
   },
   updateContestAnnouncement (data) {
     return ajax('admin/contest/announcement', 'put', {
+      data
+    })
+  },
+  getContestGroupList (contestId, offset, limit, keyword) {
+    let params = {id: contestId, paging: true, offset, limit}
+    if (keyword) {
+      params.keyword = keyword
+    }
+    return ajax('admin/contest_group', 'get', {
+      params: params
+    })
+  },
+  deleteContestGroups (contestId, groupIds) {
+    let params = {contest_id: contestId, group_ids: groupIds.join(',')}
+    return ajax('admin/contest_group', 'delete', {
+      params: params
+    })
+  },
+  addContestGroups (contestId, groupIds) {
+    let data = {contest_id: contestId, group_ids: groupIds}
+    return ajax('admin/contest_group', 'post', {
       data
     })
   },

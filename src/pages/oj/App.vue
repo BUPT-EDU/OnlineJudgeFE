@@ -6,10 +6,11 @@
         <router-view></router-view>
       </transition>
       <div class="footer">
-        <p v-html="website.website_footer"></p>
+<!--         <p v-html="website.website_footer"></p>
         <p>Powered by <a href="https://github.com/QingdaoU/OnlineJudge">OnlineJudge</a>
           <span v-if="version">&nbsp; Version: {{ version }}</span>
-        </p>
+        </p> -->
+        <p>Powered by BUPT OnlineJudge</p>
       </div>
     </div>
     <BackTop></BackTop>

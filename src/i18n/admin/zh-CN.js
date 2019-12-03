@@ -3,6 +3,7 @@ export const m = {
   Dashboard: '仪表盘',
   General: '常用设置',
   User: '用户管理',
+  Group: '组管理',
   Announcement: '公告管理',
   System_Config: '系统配置',
   Judge_Server: '判题服务器',
@@ -31,6 +32,13 @@ export const m = {
   Problem_Permission: '问题权限',
   Two_Factor_Auth: '双因素认证',
   Is_Disabled: '是否可用',
+  // Group.vue
+  Group_Group: '组',
+  Group_Info: '组信息',
+  Create_Group: '创建组',
+  Group_User: '组成员',
+  Group_Groupname: '组名',
+  Contest_Group: '比赛组',
   // Announcement.vue
   General_Announcement: '公告',
   Announcement_Title: '标题',

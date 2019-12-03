@@ -25,12 +25,12 @@
           <p>There is no presentation error in this oj.The judger will trim the blacks and wraps in your ouput's <b>last</b> line.
             if it's still different with the correct output, the result will be <code>Wrong Answer</code>.</p>
         </li>
-        <li>How to report bugs about this oj?
+       <!--  <li>How to report bugs about this oj?
           <p>The onlinejudge is open source, you can open an issue in <a href="https://github.com/QingdaoU/OnlineJudge">Github</a>.
             The details(like env, version..) about a bug is required, which will help us a lot to solve the bug.
             Certainly, we are very pleased to merge your pull requests.
           </p>
-        </li>
+        </li> -->
       </ul>
     </div>
   </panel>

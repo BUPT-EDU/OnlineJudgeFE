@@ -48,10 +48,11 @@ const getters = {
   },
   contestMenuDisabled: (state, getters) => {
     if (getters.isContestAdmin) return false
-    if (state.contest.contest_type === CONTEST_TYPE.PUBLIC) {
-      return getters.contestStatus === CONTEST_STATUS.NOT_START
-    }
-    return !state.access
+    return !state.access || getters.contestStatus === CONTEST_STATUS.NOT_START
+    // if (state.contest.contest_type === CONTEST_TYPE.PUBLIC) {
+    //   return getters.contestStatus === CONTEST_STATUS.NOT_START
+    // }
+    // return !state.access
   },
   OIContestRealTimePermission: (state, getters, _, rootGetters) => {
     if (getters.contestRuleType === 'ACM' || getters.contestStatus === CONTEST_STATUS.ENDED) {
@@ -67,8 +68,9 @@ const getters = {
     }
     return !rootGetters.isAuthenticated
   },
-  passwordFormVisible: (state, getters) => {
-    return state.contest.contest_type !== CONTEST_TYPE.PUBLIC && !state.access && !getters.isContestAdmin
+  permissionDenied: (state, getters) => {
+    return !state.access && !getters.isContestAdmin
+    // return state.contest.contest_type !== CONTEST_TYPE.PUBLIC && !state.access && !getters.isContestAdmin
   },
   contestStartTime: (state) => {
     return moment(state.contest.start_time)
@@ -141,9 +143,10 @@ const actions = {
         let contest = res.data.data
         commit(types.CHANGE_CONTEST, {contest: contest})
         commit(types.NOW, {now: moment(contest.now)})
-        if (contest.contest_type === CONTEST_TYPE.PRIVATE) {
-          dispatch('getContestAccess')
-        }
+        dispatch('getContestAccess')
+        // if (contest.contest_type === CONTEST_TYPE.PRIVATE) {
+        //   dispatch('getContestAccess')
+        // }
       }, err => {
         reject(err)
       })

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // 引入 view 组件
-import { Announcement, Conf, Contest, ContestList, Home, JudgeServer, Login,
-  Problem, ProblemList, User, PruneTestCase, Dashboard, ProblemImportOrExport } from './views'
+import { Announcement, Conf, Contest, ContestList, Home, JudgeServer, Login, ContestGroupList,
+  Problem, ProblemList, User, PruneTestCase, Dashboard, ProblemImportOrExport, Group, GroupUserList } from './views'
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -33,6 +33,16 @@ export default new VueRouter({
           path: '/user',
           name: 'user',
           component: User
+        },
+        {
+          path: '/group',
+          name: 'group',
+          component: Group
+        },
+        {
+          path: '/group/:groupId/users',
+          name: 'group-user-list',
+          component: GroupUserList
         },
         {
           path: '/conf',
@@ -93,6 +103,11 @@ export default new VueRouter({
           path: '/contest/:contestId/problems',
           name: 'contest-problem-list',
           component: ProblemList
+        },
+        {
+          path: '/contest/:contestId/groups',
+          name: 'contest-group-list',
+          component: ContestGroupList
         },
         {
           path: '/contest/:contestId/problem/create',

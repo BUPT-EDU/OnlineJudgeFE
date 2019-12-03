@@ -3,6 +3,7 @@ export const m = {
   Dashboard: '儀表板',
   General: '基本設定',
   User: '使用者管理',
+  Group: '組管理',
   Announcement: '公告管理',
   System_Config: '系統設定',
   Judge_Server: 'Judge 伺服器',
@@ -31,6 +32,13 @@ export const m = {
   Problem_Permission: '試題權限',
   Two_Factor_Auth: '兩步驟驗證',
   Is_Disabled: '是否可用',
+  // Group.vue
+  Group_Group: '組',
+  Group_Info: '組資訊',
+  Create_Group: '創建組',
+  Group_User: '組成員',
+  Group_Groupname: '組名',
+  Contest_Group: '比赛組',
   // Announcement.vue
   General_Announcement: '公告',
   Announcement_Title: '標題',

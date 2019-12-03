@@ -35,6 +35,7 @@ export const m = {
   Rankings: 'Rankings',
   Overview: 'Overview',
   Admin_Helper: 'Admin Helper',
+  Permission_Denied: 'You do not have permission for the contest, please contact the administrator.',
   // ContestProblemList
   Problems_List: 'Problems List',
 

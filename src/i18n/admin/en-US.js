@@ -3,6 +3,7 @@ export const m = {
   Dashboard: 'Dashboard',
   General: 'General',
   User: 'User',
+  Group: 'Group',
   Announcement: 'Announcement',
   System_Config: 'System Config',
   Judge_Server: 'Judge Server',
@@ -31,6 +32,13 @@ export const m = {
   Problem_Permission: 'Problem Permission',
   Two_Factor_Auth: 'Two Factor Auth',
   Is_Disabled: 'Is Disabled',
+  // Group.vue
+  Group_Group: 'Group',
+  Group_Info: 'Group',
+  Create_Group: 'Create Group',
+  Group_User: 'Group User',
+  Group_Groupname: 'Group Name',
+  Contest_Group: 'Contest Group',
   // Announcement.vue
   General_Announcement: 'Announcement',
   Announcement_Title: 'Title',
