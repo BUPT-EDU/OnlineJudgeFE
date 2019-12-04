@@ -112,6 +112,9 @@
             </el-form-item>
           </el-col>
         </el-row>
+        <el-form-item :label="$t('m.Forbid_Keyword')">
+          <el-input :placeholder="$t('m.Forbid_Keyword_Des')" v-model="problem.forbid_keyword"></el-input>
+        </el-form-item>
         <div>
           <el-form-item v-for="(sample, index) in problem.samples" :key="'sample'+index">
             <Accordion :title="'Sample' + (index + 1)">
@@ -306,6 +309,7 @@
         spjMode: '',
         disableRuleType: false,
         routeName: '',
+        forbidKeyword: '',
         error: {
           tags: '',
           spj: '',
@@ -346,7 +350,8 @@
           rule_type: 'ACM',
           hint: '',
           source: '',
-          io_mode: {'io_mode': 'Standard IO', 'input': 'input.txt', 'output': 'output.txt'}
+          io_mode: {'io_mode': 'Standard IO', 'input': 'input.txt', 'output': 'output.txt'},
+          forbid_keyword: ''
         }
         let contestID = this.$route.params.contestId
         if (contestID) {
@@ -508,6 +513,7 @@
         })
       },
       submit () {
+        console.log(this.problem)
         if (!this.problem.samples.length) {
           this.$error('Sample is required')
           return

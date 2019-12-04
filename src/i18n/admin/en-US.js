@@ -14,6 +14,8 @@ export const m = {
   ShareSubmission: 'Share Submission',
   Problem_List: 'Problem List',
   Create_Problem: 'Create Problem',
+  Forbid_Keyword: 'Forbid Keyword',
+  Forbid_Keyword_Des: 'Forbid Keyword, Split with ","',
   Export_Import_Problem: 'Export Or Import Problem',
   Contest: 'Contest',
   Contest_List: 'Contest List',

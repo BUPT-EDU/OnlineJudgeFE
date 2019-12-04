@@ -14,6 +14,8 @@ export const m = {
   ShareSubmission: '分享提交',
   Problem_List: '試題列表',
   Create_Problem: '增加題目',
+  Forbid_Keyword: '禁止關鍵詞',
+  Forbid_Keyword_Des: '禁止关键词, 以","分隔',
   Export_Import_Problem: '匯入匯出題目',
   Contest: '比賽',
   Contest_List: '比賽列表',
